@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\domain\StoreBook\StoreBook.csproj" />
+    <ProjectReference Include="..\..\infrastraction\Shop.Memory\Shop.Memory.csproj" />
   </ItemGroup>
 
 </Project>
