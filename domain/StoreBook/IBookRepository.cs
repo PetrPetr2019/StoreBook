@@ -8,7 +8,7 @@ namespace StoreBook
     {
         Book[] AllByIsbn(string isbn);
         Book[] GetAllByTitleOrAuthor(string query);
-        
+        Book GtById(int id);
     }
     
 }
