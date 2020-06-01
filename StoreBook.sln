@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreBook", "domain\StoreBo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastraction", "Infrastraction", "{D08DB483-1ABF-4FB7-84BE-78D49B25F51F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Memory", "infrastraction\Shop.Memory\Shop.Memory.csproj", "{BE16C966-0FCC-4EBC-991E-C5897EEB471C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Memory", "infrastraction\Shop.Memory\Shop.Memory.csproj", "{BE16C966-0FCC-4EBC-991E-C5897EEB471C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "presentation", "presentation", "{2D968177-B4DE-4F70-9B2A-057068D28E2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Web", "presentation\Shop.Web\Shop.Web.csproj", "{FC8322C2-343C-400B-891F-108272EE571A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Web", "presentation\Shop.Web\Shop.Web.csproj", "{FC8322C2-343C-400B-891F-108272EE571A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTest.Store", "XUnitTest.Store\XUnitTest.Store.csproj", "{9FDCDF45-6138-4FBD-95F4-136BED0C4845}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,18 @@ Global
 		{FC8322C2-343C-400B-891F-108272EE571A}.Release|x64.Build.0 = Release|Any CPU
 		{FC8322C2-343C-400B-891F-108272EE571A}.Release|x86.ActiveCfg = Release|Any CPU
 		{FC8322C2-343C-400B-891F-108272EE571A}.Release|x86.Build.0 = Release|Any CPU
+		{9FDCDF45-6138-4FBD-95F4-136BED0C4845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FDCDF45-6138-4FBD-95F4-136BED0C4845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FDCDF45-6138-4FBD-95F4-136BED0C4845}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9FDCDF45-6138-4FBD-95F4-136BED0C4845}.Debug|x64.Build.0 = Debug|Any CPU
+		{9FDCDF45-6138-4FBD-95F4-136BED0C4845}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9FDCDF45-6138-4FBD-95F4-136BED0C4845}.Debug|x86.Build.0 = Debug|Any CPU
+		{9FDCDF45-6138-4FBD-95F4-136BED0C4845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FDCDF45-6138-4FBD-95F4-136BED0C4845}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FDCDF45-6138-4FBD-95F4-136BED0C4845}.Release|x64.ActiveCfg = Release|Any CPU
+		{9FDCDF45-6138-4FBD-95F4-136BED0C4845}.Release|x64.Build.0 = Release|Any CPU
+		{9FDCDF45-6138-4FBD-95F4-136BED0C4845}.Release|x86.ActiveCfg = Release|Any CPU
+		{9FDCDF45-6138-4FBD-95F4-136BED0C4845}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
