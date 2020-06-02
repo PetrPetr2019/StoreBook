@@ -29,5 +29,22 @@ namespace StoreBook
             Id = id;
             this.Items = new List<OrderItem>(items);
         }
+
+        public  void AddItem( Book book, int count) // Метод для добавление заказа
+        {
+            if(book==null)
+                throw  new ArgumentOutOfRangeException(nameof(book));
+
+            var item = items.SingleOrDefault(s => s.BookId == book.Id);
+            if (item == null)
+            {
+                items.Add(new OrderItem(book.Id, count, book.Price));
+            }
+            else
+            {
+                items.Remove(item);
+                items.Add(new OrderItem(book.Id, item.Count + count, book.Price));
+            }
+        }
     }
 }

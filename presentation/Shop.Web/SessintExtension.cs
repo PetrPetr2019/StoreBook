@@ -12,49 +12,53 @@ namespace Shop.Web
     public static class SessionExtensions
     {
         private const string key = "cart";
+
         public static void Set(this ISession session, Cart value)
         {
-            if(value ==null)
-               return;
-            using var stream = new MemoryStream();
-            using var writer = new BinaryWriter(stream, Encoding.UTF8, true);
+            if (value == null)
+                return;
+
+            using (var stream = new MemoryStream())
+            using (var writer = new BinaryWriter(stream, Encoding.UTF8, true))
             {
-                writer.Write(value.Items.Count);
-                foreach (var item in value.Items)
-                {
-                    writer.Write(item.Key);
-                    writer.Write(item.Value); // Это количество книг в корзине есть 
-                }
-                writer.Write(value.Amount);
+                writer.Write(value.OrderId);
+                writer.Write(value.ToTalCount);
+                writer.Write(value.TotalPrice);
+
                 session.Set(key, stream.ToArray());
             }
+            
         }
 
         public static bool TryGetCart(this ISession session, out Cart value)
-        {
-            if (session.TryGetValue(key, out byte[] buffer))
             {
-                using (var stream = new MemoryStream(buffer))
+                if (session.TryGetValue(key, out byte[] buffer))
                 {
+                    using (var stream = new MemoryStream(buffer))
                     using (var reader = new BinaryReader(stream, Encoding.UTF8, true))
                     {
-                        value = new Cart();
-                        var lengtn = reader.ReadInt32();
-                        for (int i = 0; i < lengtn; i++)
-                        {
-                            var bookId = reader.ReadInt32();
-                            var count = reader.ReadInt32();
-                            value.Items.Add(bookId, count);
-                        }
+                        // И с четением делаем тоже самое
+                        var orderId = reader.ReadInt32();
+                        var totalCount = reader.ReadInt32();
+                        var totalPrice = reader.ReadDecimal();
 
-                        value.Amount = reader.ReadDecimal();
+                        value = new Cart(orderId)
+                        {
+                            ToTalCount = totalCount,
+                            TotalPrice = totalPrice,
+                        };
+
                         return true;
                     }
                 }
+
+                value = null;
+                return false;
             }
-            value = null;
-            return false;
         }
-        
     }
-}
+
+            
+            
+
+                    
