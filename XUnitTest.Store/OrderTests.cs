@@ -31,17 +31,17 @@ namespace XUnitTest.Store
             {
                 new OrderItem(1, 3, 10m),
                 new OrderItem(2, 5, 100m),
-            });
+        });
             Assert.Equal(3 + 5, order.TotalCount);
         }
-         [Fact]
-         public  void TotalCountWidthPrice_CalculatePrice()
+        [Fact]
+        public void TotalCountWidthPrice_CalculatePrice()
         {
-           var order = new Order(1, new []
-           {
-               new OrderItem(1, 3, 10m), 
+            var order = new Order(1, new[]
+            {
+               new OrderItem(1, 3, 10m),
                new OrderItem(2, 5, 100m),
-               
+
            });
             Assert.Equal(3 * 10m + 5 * 100m, order.TotalPrice);
         }

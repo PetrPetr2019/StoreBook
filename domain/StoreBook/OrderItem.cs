@@ -6,7 +6,7 @@ namespace StoreBook
     {
         public int BookId { get; }
         public int Count { get; }
-        public decimal Price { get; }
+        public decimal Price { get;}
 
         public OrderItem(int bookId, int count, decimal price)
         {

@@ -12,7 +12,7 @@ namespace Shop.Memory
         private  readonly List<Order> orders = new List<Order>();
         public Order Create()
         {
-            int nextId = orders.Count + 1;
+            var nextId = orders.Count + 1;
             var order = new Order(nextId, new OrderItem[0]);
             orders.Add(order);
             return order;
